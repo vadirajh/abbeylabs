@@ -48,13 +48,6 @@ class Identities(Resource):
 		return jsonify({'data': data}), 201
 
 
-# another resource to calculate the square of a number
-class Square(Resource):
-
-	def get(self, num):
-
-		return jsonify({'square': num**2})
-
 
 class ApplyNormalization(Resource):
 
@@ -86,7 +79,6 @@ class ApplyNormalization(Resource):
 # adding the defined resources along with their corresponding urls
 api.add_resource(Identities, '/v1/identities')
 api.add_resource(Normalization, '/v1/normalization-rules')
-api.add_resource(Square, '/square/<int:num>')
 api.add_resource(ApplyNormalization, '/v1/unifiedidentities')
 
 
